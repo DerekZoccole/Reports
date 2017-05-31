@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:MahAppsMetroHamburgerMenuNavigation.Views"
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
       Foreground="{DynamicResource TextBrush}"
       mc:Ignorable="d"
       d:DesignHeight="300"
@@ -12,14 +13,116 @@
       Title="WorkDescription">
 
     <Grid Background="{DynamicResource AccentColorBrush4}">
-
-        <iconPacks:PackIconFontAwesome Width="48"
-                                       Height="48"
-                                       Margin="10"
-                                       HorizontalAlignment="Right"
-                                       VerticalAlignment="Top"
-                                       Foreground="{DynamicResource GrayBrush3}"
-                                       Kind="Briefcase" />
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="WORK ITEMS" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                <Controls:DropDownButton Grid.Row="1" Grid.Column="0" Content="Select Work Item" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,0,10,0" />
+                <!--<ComboBox Grid.Row="1" Grid.Column="0" Text="Select Work Item" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,0,10,0" />-->
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="CLIENTS" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                <Controls:DropDownButton Grid.Row="1" Grid.Column="1" Content="Select Client" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,0,10,0" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="SEARCH" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <ComboBox Grid.Row="1" Grid.Column="0" Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True" Controls:TextBoxHelper.Watermark="Search Work Items" VerticalAlignment="Center" Margin="10,0,10,0" />
+            </Grid>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+                <DataGrid HorizontalAlignment="Stretch" Margin="0,25,0,30" RenderOptions.ClearTypeHint="Enabled" TextOptions.TextFormattingMode="Display">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DataGridColumnHeadersPresenter">
+                                        <Grid>
+                                            <Border Margin="0 0 0 10" Background="Transparent" BorderBrush="{DynamicResource GrayBrush5}" BorderThickness="0 0 0 3" IsHitTestVisible="False" />
+                                            <ItemsPresenter />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding RRAPNumber}" Header="RRAP Number" Width="*" />
+                        <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item Code" Width="*" />
+                        <DataGridTextColumn Binding="{Binding ItemDescription}" Header="ItemDescription" Width="*" />
+                        <DataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid HorizontalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding RRAPNumber}" Header="RRAP Number" Width="*" />
+                        <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item Code" Width="*" />
+                        <DataGridTextColumn Binding="{Binding ItemDescription}" Header="ItemDescription" Width="*" />
+                        <DataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <!--<ListBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch">
+                <DataGrid HorizontalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding RRAPNumber}" Header="RRAP Number" />
+                        <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item Code" />
+                        <DataGridTextColumn Binding="{Binding ItemDescription}" Header="ItemDescription" />
+                        <DataGridTextColumn Binding="{Binding Description}" Header="Description" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ListBox>
+            <ListBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch">
+                <DataGrid HorizontalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding RRAPNumber}" Header="RRAP Number" />
+                        <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item Code" />
+                        <DataGridTextColumn Binding="{Binding ItemDescription}" Header="ItemDescription" />
+                        <DataGridTextColumn Binding="{Binding Description}" Header="Description" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ListBox>-->
+        </Grid>
     </Grid>
 </Page>

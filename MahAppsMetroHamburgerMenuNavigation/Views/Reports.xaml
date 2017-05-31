@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:MahAppsMetroHamburgerMenuNavigation.Views"
+      xmlns:RDLC="clr-namespace:DSoft.RDLC;assembly=RDLCPrinter"
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
       Foreground="{DynamicResource TextBrush}"
       mc:Ignorable="d"
@@ -12,14 +13,14 @@
       Title="Reports">
 
     <Grid Background="{DynamicResource AccentColorBrush4}">
-
-        <iconPacks:PackIconFontAwesome Width="48"
+        <RDLC:RDLCReportViewer x:Name="EstimateViewer" Margin="10" Width="Auto" Height="Auto" />
+        <!--<iconPacks:PackIconFontAwesome Width="48"
                                        Height="48"
                                        Margin="10"
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Foreground="{DynamicResource GrayBrush3}"
-                                       Kind="Book" />
+                                       Kind="Book" />-->
 
     </Grid>
 </Page>

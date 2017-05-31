@@ -8,7 +8,7 @@
       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
       Foreground="{DynamicResource TextBrush}"
       mc:Ignorable="d"
-      d:DesignHeight="300"
+      d:DesignHeight="1800"
       d:DesignWidth="300"
       Title="BrowseClients">
 
@@ -26,7 +26,8 @@
                 <ColumnDefinition Width="0.1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="41" />
                 <RowDefinition Height="21" />
                 <RowDefinition Height="57" />
                 <RowDefinition Height="21" />
@@ -53,26 +54,37 @@
                 <RowDefinition Height="57" />
                 <RowDefinition Height="62" />
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation" Grid.Row="2" Grid.Column="2" Height="41" x:Name="FirstNationTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="3" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT NAME</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Name" Grid.Row="4" Grid.Column="2" Height="41" x:Name="FirstNationContactNameTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="5" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT PHONE</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Phone" Grid.Row="6" Grid.Column="2" Height="41" x:Name="FirstNationContactPhoneTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="7" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT EMAIL</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Email" Grid.Row="8" Grid.Column="2" Height="41" x:Name="FirstNationContactEmailTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="9" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT NAME</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter Applicant Na,me" Grid.Row="10" Grid.Column="2" Height="41" x:Name="ApplicantNameTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="11" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>ALTERNATE NAME</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter Altername Name" Grid.Row="12" Grid.Column="2" Height="41" x:Name="AlternateNameTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="13" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT PHONE</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter Applicant Phone" Grid.Row="14" Grid.Column="2" Height="41" x:Name="ApplicantPhoneTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="15" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>ADDRESS</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter Address" Grid.Row="16" Grid.Column="2" Height="41" x:Name="AddressTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="17" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>CITY</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter City" Grid.Row="18" Grid.Column="2" Height="41" x:Name="CityTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="19" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>PROVINCE</Bold></TextBlock>
-            <Controls:DropDownButton Grid.Row="20" Grid.Column="2" Height="41" x:Name="ProvinceDropDownButton" VerticalAlignment="Center" Padding="10, 0, 0, 0" Content="Province" HorizontalContentAlignment="Left" Foreground="Gray">
+            <Controls:DropDownButton Grid.Row="1" Grid.Column="2" Height="41" Content="Clients" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="Gray" BorderBrush="Silver">
+                <Controls:DropDownButton.Icon>
+                    <iconPacks:PackIconFontAwesome Width="20" Height="20" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource GrayBrush3}" Kind="Users" />
+                </Controls:DropDownButton.Icon>
+            </Controls:DropDownButton>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="6" HorizontalAlignment="Stretch">
+                <Button Content="New" Margin="10,0,10,0"/>
+                <Button Content="Copy" Margin="10,0,10,0" />
+                <Button Content="Save" Margin="10,0,10,0" />
+                <Button Content="Delete" Margin="10,0,10,0" />
+            </StackPanel>
+            <TextBlock Grid.Row="2" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation" Grid.Row="3" Grid.Column="2" Height="41" x:Name="FirstNationTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="4" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT NAME</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Name" Grid.Row="5" Grid.Column="2" Height="41" x:Name="FirstNationContactNameTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="6" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT PHONE</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Phone" Grid.Row="7" Grid.Column="2" Height="41" x:Name="FirstNationContactPhoneTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="8" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>FIRST NATION CONTACT EMAIL</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter First Nation Contact Email" Grid.Row="9" Grid.Column="2" Height="41" x:Name="FirstNationContactEmailTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="10" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT NAME</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Applicant Name" Grid.Row="11" Grid.Column="2" Height="41" x:Name="ApplicantNameTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="12" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>ALTERNATE NAME</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Altername Name" Grid.Row="13" Grid.Column="2" Height="41" x:Name="AlternateNameTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="14" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>APPLICANT PHONE</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Applicant Phone" Grid.Row="15" Grid.Column="2" Height="41" x:Name="ApplicantPhoneTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="16" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>ADDRESS</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Address" Grid.Row="17" Grid.Column="2" Height="41" x:Name="AddressTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="18" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>CITY</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter City" Grid.Row="19" Grid.Column="2" Height="41" x:Name="CityTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="20" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>PROVINCE</Bold></TextBlock>
+            <Controls:DropDownButton Grid.Row="21" Grid.Column="2" Height="41" x:Name="ProvinceDropDownButton" VerticalAlignment="Center" Content="Province" HorizontalContentAlignment="Left" Foreground="Gray" BorderBrush="Silver">
                 <Controls:DropDownButton.Items>
                     <TextBlock Name="AlbertaTextBlock" FontSize="14" VerticalAlignment="Center">Alberta</TextBlock>
                     <TextBlock Name="BritishColumbiaTextBlock" FontSize="14" VerticalAlignment="Center">British Columbia</TextBlock>
@@ -87,10 +99,10 @@
                     <TextBlock Name="YukonTextBlock" FontSize="14" VerticalAlignment="Center">Yukon</TextBlock>
                 </Controls:DropDownButton.Items>
             </Controls:DropDownButton>
-            <TextBlock Grid.Row="21" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>POSTAL CODE</Bold></TextBlock>
-            <TextBox Controls:TextBoxHelper.Watermark="Enter Postal Code" Grid.Row="22" Grid.Column="2" Height="41" x:Name="PostalCodeTextBox" VerticalAlignment="Center" Padding="10, 9.5, 0, 0" />
-            <TextBlock Grid.Row="23" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>PROVINCE</Bold></TextBlock>
-            <Controls:DropDownButton Grid.Row="24" Grid.Column="2" Height="41" x:Name="ServiceDropDownButton" VerticalAlignment="Center" Padding="10, 0, 0, 0" Content="Service" HorizontalContentAlignment="Left" Foreground="Gray">
+            <TextBlock Grid.Row="22" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>POSTAL CODE</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Postal Code" Grid.Row="23" Grid.Column="2" Height="41" x:Name="PostalCodeTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="24" Grid.Column="2" FontSize="14" VerticalAlignment="Bottom"><Bold>PROVINCE</Bold></TextBlock>
+            <Controls:DropDownButton Grid.Row="25" Grid.Column="2" Height="41" x:Name="ServiceDropDownButton" VerticalAlignment="Center" Content="Service" HorizontalContentAlignment="Left" Foreground="Gray" BorderBrush="Silver">
                 <Controls:DropDownButton.Items>
                     <TextBlock Name="PAVTextBlock" FontSize="14" VerticalAlignment="Center">PAV</TextBlock>
                     <TextBlock Name="PCRTextBlock" FontSize="14" VerticalAlignment="Center">PCR</TextBlock>
@@ -99,6 +111,30 @@
                     <TextBlock Name="HASITextBlock" FontSize="14" VerticalAlignment="Center">HASI</TextBlock>
                 </Controls:DropDownButton.Items>
             </Controls:DropDownButton>
+            <TextBlock Grid.Row="2" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC ACCOUNT NUMBER</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter CMHC Account Number" Grid.Row="3" Grid.Column="6" Height="41" x:Name="CMHCAccountNumberTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="4" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC CONTACT NAME</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter CMHC Contact Name" Grid.Row="5" Grid.Column="6" Height="41" x:Name="CMHCContactNameTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="6" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC CONTACT PHONE</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter CMHC Contact Phone" Grid.Row="7" Grid.Column="6" Height="41" x:Name="CMHCContactPhoneTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="8" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC CONTACT EMAIL</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter CMHC Contact Email" Grid.Row="9" Grid.Column="6" Height="41" x:Name="CMHCContactEmailTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="10" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CMHC REQUEST DATE</Bold></TextBlock>
+            <DatePicker Controls:TextBoxHelper.Watermark="Enter CMHC Request Date" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="6" Height="41" x:Name="CMHCRequestDateDateTimePicker"/>
+            <TextBlock Grid.Row="12" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>TAT DUE DATE</Bold></TextBlock>
+            <DatePicker Controls:TextBoxHelper.Watermark="Enter TAT Due Date" Grid.Row="13" Grid.Column="6" Height="41" x:Name="TATDueDateTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="14" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>CLIENT ID</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Client ID" Grid.Row="15" Grid.Column="6" Height="41" x:Name="ClientIDTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="16" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>INSPECTION DATE</Bold></TextBlock>
+            <DatePicker Controls:TextBoxHelper.Watermark="Enter Inpsection Date" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Row="17" Grid.Column="6" Height="41" x:Name="InspectionDateTextBox" VerticalAlignment="Center" />
+            <TextBlock Grid.Row="18" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>INSPECTOR</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Inspector" Grid.Row="19" Grid.Column="6" Height="41" x:Name="InspectorTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="20" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>AGENT REFERENCE NUMBER</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Agent Reference Number" Grid.Row="21" Grid.Column="6" Height="41" x:Name="AgentReferenceNumberTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="22" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>LEGAL DESCRIPTION</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Legal Description" Grid.Row="23" Grid.Column="6" Height="41" x:Name="LegalDescriptionTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+            <TextBlock Grid.Row="24" Grid.Column="6" FontSize="14" VerticalAlignment="Bottom"><Bold>LOAN TYPE</Bold></TextBlock>
+            <TextBox Controls:TextBoxHelper.Watermark="Enter Loan Type" Grid.Row="25" Grid.Column="6" Height="41" x:Name="LoanTypeTextBox" VerticalAlignment="Center" VerticalContentAlignment="Center" />
         </Grid>
     </ScrollViewer>
 </Page>
